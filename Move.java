@@ -20,7 +20,7 @@ public class Move {
     }
     
     public int getI() {
-        return i;
+        return i; //returns I
     }
     
     public int getJ() {
