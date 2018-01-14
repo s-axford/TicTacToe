@@ -33,7 +33,7 @@ public class Board {
     public Board(Board other, Move move) {
 		
 		other.board[move.getI()][move.getJ()] = move.getPiece();
-		this.board = other.board;
+		this.board = other.board; // sets other board with move applied as current board
     }
 
     /*
