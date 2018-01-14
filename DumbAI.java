@@ -20,15 +20,20 @@ public class DumbAI implements AI {
      * @param aiIsX Indicates whether the AI player's piece is
      *              the 'X'.
      */
-    public DumbAI(boolean aiIsX) {
-        /*
-         * TBD
-         */
+    public DumbAI(boolean aiIsX)
+    {
+
     }
 
     public Move chooseMove(Board board) {
-        /*
-         * TBD
-         */
+
+        //Finds random number
+        int col = random.nextInt();
+        int col = col % 3;
+        int row = random.nextInt();
+        int row = row % 3;
+
+        if (board.get(col, row))
+
     }
 }
