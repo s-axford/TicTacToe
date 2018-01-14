@@ -32,8 +32,8 @@ public class Board {
      */
     public Board(Board other, Move move) {
 		
-		other[move.getI()][move.getJ()] = move.getPiece();
-		board = other;
+		other.board[move.getI()][move.getJ()] = move.getPiece();
+		this.board = other.board;
     }
 
     /*
@@ -41,11 +41,11 @@ public class Board {
      */
     public String toString() {
 		
-		String currentGame;
+		String currentGame = null;
 		
 		for (int i = 0; i < 3; i++)
 		{
-			currentGame = currentGame + "| "
+			currentGame = currentGame + "| ";
 			for (int j = 0; j < 3; j++)
 			{
 				currentGame = currentGame + board[i][j] + " | "; 
@@ -72,7 +72,7 @@ public class Board {
 		{
 			for (int j = 0; j < 3; j++)
 			{
-				if (board[i][j] == " ")
+				if (board[i][j] == ' ')
 				{
 					return false;
 				}
