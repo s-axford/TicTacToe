@@ -30,21 +30,36 @@ public class ConsoleRunner {
      * Constructor
      */
     public ConsoleRunner() {    
-        /*
+        
+	
+	/*
          * TBD
          *
          * Use the 'next' method of Scanner and the 'matches' of the String
          * class to process user responses as strings.
          */
     }
-
+	
     /**
      * Enter the main control loop which returns only at the end of the game
      * when one party has won or there has been a draw.
      */
     public void mainLoop() {
         /*
-         * TBD
+    
+	/*
+	 *	Starts collecting game options 
+	 */
+	System.out.print("Do you want to play as X? (Y/N)");
+	String player = System.console().readLine();
+	
+	System.out.print("Do you want a challenge? (Y/N)");
+	String difficulty = System.console().readLine();
+	 
+	System.out.print("Player: " + player);
+	System.out.print("Difficulty: " + difficulty);
+	 
+	/* TBD
          *
          * Use the 'nextInt' method of Scanner class to read user responses as
          * integers.

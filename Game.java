@@ -18,7 +18,9 @@ public class Game {
      * Construct a new Game according to the given parameters.
      */
     public Game(boolean playerIsX, boolean challenging) {
-        /*
+        
+	
+	 /*
          * TBD
          */
     }
@@ -27,9 +29,7 @@ public class Game {
      * Return a copy of the board's current contents.
      */
     public Board getBoard() {
-        /*
-         * TBD
-         */
+		return board;
     }
 
     /**
@@ -39,6 +39,7 @@ public class Game {
         /*
          * TBD
          */
+	return status;
     }
     
     /**
@@ -52,17 +53,22 @@ public class Game {
      *
      */
     public boolean placePlayerPiece(int i, int j) {
-        /*
-         * TBD
-         */
+        
+		if (get(i,j) == " " and i < 3 and j < 3)
+		{
+			Move move = new Move(i,j,)
+			board.Board(board, move)
+			
+			return true;
+		}
+		
+	return false;
     }
 
     /**
      * @precondition status == IN_PROGRESS
      */
     public void aiPlacePiece() {
-        /*
-         * TBD
-         */
+		
     }
 }

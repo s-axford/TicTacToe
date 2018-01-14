@@ -8,8 +8,7 @@
 public class TicTacToeApplication {
 
     public static void main(String[] args) {
-        /*
-         * TBD
-         */
+		ConsoleRunner console = new ConsoleRunner();
+		console.mainLoop();
     }
 }
