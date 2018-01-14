@@ -32,9 +32,8 @@ public class Board {
      */
     public Board(Board other, Move move) {
 		
-		other[move.i()][move.j()] = piece;
-		
-		return other;
+		other[move.getI()][move.getJ()] = move.getPiece();
+		board = other;
     }
 
     /*
