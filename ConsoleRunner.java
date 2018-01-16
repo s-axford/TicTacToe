@@ -29,15 +29,35 @@ public class ConsoleRunner {
     /**
      * Constructor
      */
-    public ConsoleRunner() {    
-        
-	
-	/*
-         * TBD
-         *
-         * Use the 'next' method of Scanner and the 'matches' of the String
-         * class to process user responses as strings.
-         */
+    public ConsoleRunner() {
+
+        String input = null;
+        while (input.matches("N") || input.matches("Y")) {
+            System.out.println("Do you want to play as X? (Y/N)");
+            input = scanner.next();
+            if (input.matches("Y")) {
+                playerIsX = true;
+            } else if (input.matches("N")) {
+                boolean playerIsX = false;
+            }
+            else {
+                System.out.println("Not valid input");
+            }
+        }
+        input = null;
+        while (input.matches("N") || input.matches("Y")) {
+            System.out.print("Do you want a challenge? (Y/N)");
+            input = scanner.next();
+            if (input.matches("Y")) {
+                boolean challenging = true;
+            } else if (input.matches("N")) {
+                boolean challenging = false;
+            }
+            else {
+                System.out.println("Not valid input");
+            }
+        }
+        game = new game(playerIsX , challenging);
     }
 	
     /**
