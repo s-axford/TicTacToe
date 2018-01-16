@@ -9,7 +9,7 @@ import java.util.Random;
 public class DumbAI implements AI {
 
     private Random random = new Random();
-
+    public char AIPiece;
     /*
      * TBD: Create additional private members if useful.
      */
@@ -21,7 +21,14 @@ public class DumbAI implements AI {
      *              the 'X'.
      */
     public DumbAI(boolean aiIsX) {
-
+        if (aiIsX)
+        {
+            AIPiece = 'X';
+        }
+        else
+        {
+            AIPiece = 'O';
+        }
     }
 
     public Move chooseMove(Board board) {
