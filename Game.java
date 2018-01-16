@@ -44,11 +44,9 @@ public class Game {
     /**
      * Get the game's status.
      */
-    public GameStatus getStatus() {
-        /*
-         * TBD
-         */
-	return status;
+    public GameStatus getStatus()
+    {
+	    return status.GameStatus();
     }
     
     /**

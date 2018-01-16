@@ -9,7 +9,7 @@ import java.util.Random;
 public class DumbAI implements AI {
 
     private Random random = new Random();
-    public char AIPiece;
+    private char AIPiece;
     /*
      * TBD: Create additional private members if useful.
      */
