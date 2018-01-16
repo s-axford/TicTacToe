@@ -18,11 +18,20 @@ public class Game {
      * Construct a new Game according to the given parameters.
      */
     public Game(boolean playerIsX, boolean challenging) {
-        
-	
-	 /*
-         * TBD
-         */
+
+        if (challenging)
+        {
+            break;
+        }
+
+        if (playerIsX)
+        {
+            ai = new DumbAI(false);
+        }
+        else
+        {
+            ai = new DumbAI(true);
+        }
     }
 
     /**
