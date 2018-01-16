@@ -18,11 +18,20 @@ public class Game {
      * Construct a new Game according to the given parameters.
      */
     public Game(boolean playerIsX, boolean challenging) {
-        
-	
-	 /*
-         * TBD
-         */
+
+        if (challenging)
+        {
+            break;
+        }
+
+        if (playerIsX)
+        {
+            ai = new DumbAI(false);
+        }
+        else
+        {
+            ai = new DumbAI(true);
+        }
     }
 
     /**
@@ -35,11 +44,9 @@ public class Game {
     /**
      * Get the game's status.
      */
-    public GameStatus getStatus() {
-        /*
-         * TBD
-         */
-	return status;
+    public GameStatus getStatus()
+    {
+	    return status.GameStatus();
     }
     
     /**
@@ -52,12 +59,19 @@ public class Game {
      * @precondition status == IN_PROGRESS
      *
      */
-    public boolean placePlayerPiece(int i, int j) {
-        if ((get(i,j) == " ") and i < 3 and j < 3){
+    public boolean placePlayerPiece(int i, int j)
+    {
+        if ((get(i,j) == " ") and i < 3 and j < 3)
+        {
 			Move move = new Move(i,j,);
 			board.Board(board, move);
 			return true;
-		    }
+        }
+        else
+        {
+            System.out.print("Invalid Selection")   //Make sure this doesn't skip the players turn and keep going
+        }
+
 		
 	return false;
     }
@@ -65,7 +79,9 @@ public class Game {
     /**
      * @precondition status == IN_PROGRESS
      */
-    public void aiPlacePiece() {
-		
+    public void aiPlacePiece()
+    {
+		Move newMove = ai.chooseMove(board);
+		board = new Board(board, newMove);
     }
 }
