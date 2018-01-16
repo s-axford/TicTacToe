@@ -53,14 +53,11 @@ public class Game {
      *
      */
     public boolean placePlayerPiece(int i, int j) {
-        
-		if (get(i,j) == " " and i < 3 and j < 3)
-		{
-			Move move = new Move(i,j,)
-			board.Board(board, move)
-			
+        if ((get(i,j) == " ") and i < 3 and j < 3){
+			Move move = new Move(i,j,);
+			board.Board(board, move);
 			return true;
-		}
+		    }
 		
 	return false;
     }
