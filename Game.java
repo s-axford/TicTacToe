@@ -69,7 +69,7 @@ public class Game {
         }
         else
         {
-            System.out.print("Invalid Selection")   //Make sure this doesn't skip the players turn and keep going
+            System.out.print("Invalid Selection");   //Make sure this doesn't skip the players turn and keep going
         }
 
 		
