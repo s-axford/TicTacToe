@@ -43,8 +43,8 @@ public class DumbAI implements AI {
         if (board.get(col, row) == " ")
         {
             found = true;
-            Move move = new Move(row, col, AIPiece)
+            Move move = new Move(row, col, AIPiece);
         }
-        return move
+        return move;
     }
 }
