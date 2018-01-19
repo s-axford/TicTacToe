@@ -34,17 +34,27 @@ public class DumbAI implements AI {
     public Move chooseMove(Board board) {
 
         //Finds random number
-        while (found == false and board.isFull() == false) {
+         boolean found = false;
+         Move move;
+        while (found == false && (board.isFull() == false)) {
         int col = random.nextInt();
-        int col = col % 3;
+        col = col % 3;
         int row = random.nextInt();
-        int row = row % 3;
+        row = row % 3;
 
-        if (board.get(col, row) == " ")
+        if (board.get(col, row) == ' ')
         {
             found = true;
-            Move move = new Move(row, col, AIPiece);
+            move = new Move(row, col, AIPiece);
+            return move;
+        }
+        else
+        {
+            break;
+        }
+
+
         }
         return move;
     }
-}
+    }
