@@ -21,10 +21,9 @@ public class Game {
 
         if (challenging)
         {
-            break;
-        }
 
-        if (playerIsX)
+        }
+        else if (playerIsX)
         {
             ai = new DumbAI(false);
         }
@@ -61,9 +60,9 @@ public class Game {
      */
     public boolean placePlayerPiece(int i, int j)
     {
-        if ((get(i,j) == " ") and i < 3 and j < 3)
+        if ((board.get(i,j) == ' ') && i < 3 && j < 3)
         {
-			Move move = new Move(i,j,);
+			Move move = new Move(i,j, 'X');
 			board.Board(board, move);
 			return true;
         }

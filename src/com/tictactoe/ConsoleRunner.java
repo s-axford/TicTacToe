@@ -57,7 +57,7 @@ public class ConsoleRunner {
                 System.out.println("Not valid input");
             }
         }
-        game = new game(playerIsX , challenging);
+        game = new Game(playerIsX , challenging);
     }
 	
     /**
