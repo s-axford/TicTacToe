@@ -45,7 +45,7 @@ public class Game {
      */
     public GameStatus getStatus()
     {
-	    return status.GameStatus();
+	    return status;
     }
     
     /**
@@ -63,7 +63,7 @@ public class Game {
         if ((board.get(i,j) == ' ') && i < 3 && j < 3)
         {
 			Move move = new Move(i,j, 'X');
-			board.Board(board, move);
+			board = new Board(board, move);
 			return true;
         }
         else

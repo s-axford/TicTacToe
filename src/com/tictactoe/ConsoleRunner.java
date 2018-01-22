@@ -16,6 +16,7 @@ public class ConsoleRunner {
      * goes first.
      */
     private boolean playerIsX;
+    private boolean challenging;
 
     private Game game;
     
@@ -30,28 +31,34 @@ public class ConsoleRunner {
      * Constructor
      */
     public ConsoleRunner() {
-
-        String input = null;
-        while (input.matches("N") || input.matches("Y")) {
+        boolean done = false;
+        String input = " ";
+       while (done == false){
             System.out.println("Do you want to play as X? (Y/N)");
             input = scanner.next();
             if (input.matches("Y")) {
                 playerIsX = true;
+                done = true;
             } else if (input.matches("N")) {
-                boolean playerIsX = false;
+                playerIsX = false;
+                done = true;
             }
             else {
                 System.out.println("Not valid input");
             }
         }
-        input = null;
-        while (input.matches("N") || input.matches("Y")) {
+
+        input = " ";
+        done = false;
+        while (done == false) {
             System.out.print("Do you want a challenge? (Y/N)");
             input = scanner.next();
             if (input.matches("Y")) {
-                boolean challenging = true;
+                challenging = true;
+                done = true;
             } else if (input.matches("N")) {
-                boolean challenging = false;
+                challenging = false;
+                done = true;
             }
             else {
                 System.out.println("Not valid input");
@@ -70,15 +77,6 @@ public class ConsoleRunner {
 	/*
 	 *	Starts collecting game options 
 	 */
-	System.out.print("Do you want to play as X? (Y/N)");
-	String player = System.console().readLine();
-	
-	System.out.print("Do you want a challenge? (Y/N)");
-	String difficulty = System.console().readLine();
-	 
-	System.out.print("Player: " + player);
-	System.out.print("Difficulty: " + difficulty);
-	 
 	/* TBD
          *
          * Use the 'nextInt' method of Scanner class to read user responses as
