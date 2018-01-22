@@ -71,6 +71,7 @@ public class ConsoleRunner {
     {
         Integer row;
         Integer col;
+        Board board = game.getBoard();
 
         if (playerIsX)
         {
@@ -79,7 +80,9 @@ public class ConsoleRunner {
             System.out.println("What col?");
             col = scanner.nextInt();
             game.placePlayerPiece(row , col);
+            System.out.println(board.toString());
             game.aiPlacePiece();
+            System.out.println(board.toString());
         }
         else
         {
@@ -90,6 +93,7 @@ public class ConsoleRunner {
             System.out.println("What col?");
             col = scanner.nextInt();
             game.placePlayerPiece(row , col);
+            System.out.println(board.toString());
         }
     }
 
