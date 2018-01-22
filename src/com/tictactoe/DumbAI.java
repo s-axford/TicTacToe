@@ -35,7 +35,7 @@ public class DumbAI implements AI {
 
         //Finds random number
          boolean found = false;
-         Move move;
+         Move move = null;
         while (found == false && (board.isFull() == false)) {
         int col = random.nextInt();
         col = col % 3;
