@@ -78,7 +78,7 @@ public class ConsoleRunner {
             row = scanner.nextInt();
             System.out.println("What col?");
             col = scanner.nextInt();
-            game.placePlayerPiece(row - 1, col - 1);
+            game.placePlayerPiece(row , col);
             game.aiPlacePiece();
         }
         else
@@ -89,7 +89,7 @@ public class ConsoleRunner {
             row = scanner.nextInt();
             System.out.println("What col?");
             col = scanner.nextInt();
-            game.placePlayerPiece(row - 1, col - 1);
+            game.placePlayerPiece(row , col);
         }
     }
 
