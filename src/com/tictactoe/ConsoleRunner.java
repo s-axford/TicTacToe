@@ -66,17 +66,52 @@ public class ConsoleRunner {
         }
         game = new Game(playerIsX , challenging);
     }
-	
+
+    private void oneRound(boolean playerIsX)
+    {
+        Integer row;
+        Integer col;
+
+        if (playerIsX)
+        {
+            System.out.println("What row?");
+            row = scanner.nextInt();
+            System.out.println("What col?");
+            col = scanner.nextInt();
+            game.placePlayerPiece(row - 1, col - 1);
+            game.aiPlacePiece();
+        }
+        else
+        {
+            game.aiPlacePiece();
+
+            System.out.println("What row?");
+            row = scanner.nextInt();
+            System.out.println("What col?");
+            col = scanner.nextInt();
+            game.placePlayerPiece(row - 1, col - 1);
+        }
+    }
+
     /**
      * Enter the main control loop which returns only at the end of the game
      * when one party has won or there has been a draw.
      */
     public void mainLoop() {
-        /*
-    
-	/*
-	 *	Starts collecting game options 
-	 */
+
+        //Creates a new game
+
+        //while (game.getStatus() == IN_PROGRESS)
+        //{
+            //print board before round
+            Board board = game.getBoard();
+            System.out.println(board.toString());
+
+            this.oneRound(playerIsX);
+            System.out.println(board.toString());
+        //}
+
+
 	/* TBD
          *
          * Use the 'nextInt' method of Scanner class to read user responses as

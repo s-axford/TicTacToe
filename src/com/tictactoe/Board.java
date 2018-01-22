@@ -31,7 +31,10 @@ public class Board {
      * 'move' to generate this board's state.
      */
     public Board(Board other, Move move) {
-		
+		System.out.println(move.getI());
+		System.out.println(move.getJ());
+		System.out.println(move.getPiece());
+
 		other.board[move.getI()][move.getJ()] = move.getPiece();
 		this.board = other.board; // sets other board with move applied as the current board
     }
@@ -41,7 +44,7 @@ public class Board {
      */
     public String toString() {
 		
-		String currentGame = null;
+		String currentGame = "";
 		
 		for (int i = 0; i < 3; i++)
 		{
