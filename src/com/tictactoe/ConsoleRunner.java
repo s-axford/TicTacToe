@@ -1,10 +1,10 @@
-/**
- * ConsoleRunner:  Prompts the user to determine the parameters of the Game
- * constructor.  Creates a Game and manages the alternating calls to the
- * ‘place’ methods in Game.  Prompts the user for inputs and outputs the state
- * of the board to the console.
- *
- * @author Spencer Axford and Noah Gallant
+/*
+  ConsoleRunner:  Prompts the user to determine the parameters of the Game
+  constructor.  Creates a Game and manages the alternating calls to the
+  ‘place’ methods in Game.  Prompts the user for inputs and outputs the state
+  of the board to the console.
+
+  @author Spencer Axford and Noah Gallant
  */
 
 import java.util.Scanner;
@@ -81,12 +81,13 @@ public class ConsoleRunner {
             col = scanner.nextInt();
             game.placePlayerPiece(row , col);
             System.out.println(board.toString());
-            game.aiPlacePiece();
-            System.out.println(board.toString());
+            //game.aiPlacePiece();
+            //System.out.println(board.toString());
         }
+        /*
         else
         {
-            game.aiPlacePiece();
+            //game.aiPlacePiece();
 
             System.out.println("What row?");
             row = scanner.nextInt();
@@ -95,6 +96,7 @@ public class ConsoleRunner {
             game.placePlayerPiece(row , col);
             System.out.println(board.toString());
         }
+        */
     }
 
     /**

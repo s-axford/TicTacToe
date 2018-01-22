@@ -65,6 +65,7 @@ public class Game {
      */
     public boolean placePlayerPiece(int i, int j)
     {
+        System.out.println(board.get(i,j));
         if (board.get(i,j) == ' ' && i < 3 && j < 3)
         {
 			Move move = new Move(i,j, 'X');
