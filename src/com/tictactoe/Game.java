@@ -7,7 +7,7 @@
 
 public class Game {
     private Board board = new Board();
-    private GameStatus status = IN_PROGRESS;
+    private GameStatus status = GameStatus.IN_PROGRESS;
     private AI ai;
 
     /*
@@ -65,7 +65,7 @@ public class Game {
      */
     public boolean placePlayerPiece(int i, int j)
     {
-        if ((board.get(i,j) == ' ') && i < 3 && j < 3)
+        if (board.get(i,j) == ' ' && i < 3 && j < 3)
         {
 			Move move = new Move(i,j, 'X');
 			board = new Board(board, move);

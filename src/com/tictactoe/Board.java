@@ -51,7 +51,10 @@ public class Board {
 			currentGame = currentGame + "| ";
 			for (int j = 0; j < 3; j++)
 			{
-				currentGame = currentGame + board[i][j] + " | "; 
+				currentGame = currentGame + board[i][j] + " | ";
+				if ( j == 2){
+					currentGame = currentGame + "\n";
+				}
 			}
 		}
 		
