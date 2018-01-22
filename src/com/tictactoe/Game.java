@@ -7,7 +7,7 @@
 
 public class Game {
     private Board board = new Board();
-    private GameStatus status;
+    private GameStatus status = IN_PROGRESS;
     private AI ai;
 
     /*
@@ -19,19 +19,24 @@ public class Game {
      */
     public Game(boolean playerIsX, boolean challenging) {
 
-        if (challenging)
-        {
 
+        if (challenging) {
+            if (playerIsX) {
+                ai = new SmartAI(false);
+            }
+            else {
+                ai = new SmartAI(true);
+            }
         }
-        else if (playerIsX)
-        {
-            ai = new DumbAI(false);
-        }
-        else
-        {
-            ai = new DumbAI(true);
+        else {
+            if (playerIsX) {
+                ai = new DumbAI(false);
+            } else {
+                ai = new DumbAI(true);
+            }
         }
     }
+
 
     /**
      * Return a copy of the board's current contents.
@@ -80,6 +85,7 @@ public class Game {
      */
     public void aiPlacePiece()
     {
+        System.out.println("hello world");
 		Move newMove = ai.chooseMove(board);
 		board = new Board(board, newMove);
     }
