@@ -73,22 +73,22 @@ public class ConsoleRunner {
         Integer col;
         Board board = game.getBoard();
 
+
         if (playerIsX)
         {
-            System.out.println("What row?");
-            row = scanner.nextInt();
-            System.out.println("What col?");
-            col = scanner.nextInt();
-            game.placePlayerPiece(row , col);
-            System.out.println(board.toString());
-            //game.aiPlacePiece();
-            //System.out.println(board.toString());
+
+            do {
+                System.out.println("What row?");
+                row = scanner.nextInt() - 1;
+                System.out.println("What col?");
+                col = scanner.nextInt() - 1;
+            }while (game.placePlayerPiece(row,col) == false);
+            game.aiPlacePiece();
         }
         /*
         else
         {
             //game.aiPlacePiece();
-
             System.out.println("What row?");
             row = scanner.nextInt();
             System.out.println("What col?");
@@ -99,7 +99,7 @@ public class ConsoleRunner {
         */
     }
 
-    /**
+    /*
      * Enter the main control loop which returns only at the end of the game
      * when one party has won or there has been a draw.
      */
@@ -107,15 +107,15 @@ public class ConsoleRunner {
 
         //Creates a new game
 
-        //while (game.getStatus() == IN_PROGRESS)
-        //{
+        do
+        {
             //print board before round
             Board board = game.getBoard();
+            System.out.println ("\n\n\n\n\n\n\n\nMake Your Move");
             System.out.println(board.toString());
-
             this.oneRound(playerIsX);
-            System.out.println(board.toString());
-        //}
+
+        } while (game.getStatus() == GameStatus.IN_PROGRESS);
 
 
 	/* TBD

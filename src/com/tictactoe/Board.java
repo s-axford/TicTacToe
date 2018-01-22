@@ -41,11 +41,11 @@ public class Board {
      */
     public String toString() {
 		
-		String currentGame = "";
+		String currentGame = "    1   2   3  \n";
 		
 		for (int i = 0; i < 3; i++)
 		{
-			currentGame = currentGame + "| ";
+			currentGame = currentGame + (i+1) + " | ";
 			for (int j = 0; j < 3; j++)
 			{
 				currentGame = currentGame + board[i][j] + " | ";

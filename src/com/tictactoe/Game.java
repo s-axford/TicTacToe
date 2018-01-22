@@ -66,19 +66,17 @@ public class Game {
     public boolean placePlayerPiece(int i, int j)
     {
         System.out.println(board.get(i,j));
-        if (board.get(i,j) == ' ' && i < 3 && j < 3)
-        {
-			Move move = new Move(i,j, 'X');
-			board = new Board(board, move);
-			return true;
-        }
-        else
-        {
-            System.out.print("Invalid Selection");   //Make sure this doesn't skip the players turn and keep going
+        if (board.get(i,j) == ' ' && i < 3 && j < 3) {
+            Move move = new Move(i, j, 'X');
+
+
+            board = new Board(board, move);
+            return true;
         }
 
-		
-	return false;
+        System.out.println ("\n\n\n\n\n\n\n\nInvalid Selection!");
+	    System.out.println(board.toString());
+        return false;
     }
 
     /**
@@ -86,7 +84,6 @@ public class Game {
      */
     public void aiPlacePiece()
     {
-        System.out.println("hello world");
 		Move newMove = ai.chooseMove(board);
 		board = new Board(board, newMove);
     }
