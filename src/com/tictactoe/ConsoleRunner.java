@@ -79,7 +79,9 @@ public class ConsoleRunner {
                 System.out.println("What col?");
                 col = scanner.nextInt() - 1;
             }while (game.placePlayerPiece(row,col) == false);
-            game.aiPlacePiece();
+            if(game.getStatus() == GameStatus.IN_PROGRESS) {
+                game.aiPlacePiece();
+            }
         }
 
 
@@ -98,8 +100,17 @@ public class ConsoleRunner {
             System.out.println ("\n\n\n\n\n\n\n\nMake Your Move");
             System.out.println(board.toString());
             this.oneRound(playerIsX);
-
         } while (game.getStatus() == GameStatus.IN_PROGRESS);
+        System.out.println("Game Over\n");
+        if (game.getStatus() == GameStatus.O_WON) {
+            System.out.println("O wins");
+        }
+        if (game.getStatus() == GameStatus.X_WON) {
+            System.out.println("X wins");
+        }
+        if (game.getStatus() == GameStatus.DRAW) {
+            System.out.println("Draw");
+        }
 
 
 	/* TBD
