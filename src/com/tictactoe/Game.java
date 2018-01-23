@@ -9,6 +9,7 @@ public class Game {
     private Board board = new Board();
     private GameStatus status;
     private AI ai;
+    private char playerPiece = 'W';
 
     /*
      * TBD: Create additional private members if useful.
@@ -23,16 +24,20 @@ public class Game {
         if (challenging) {
             if (playerIsX) {
                 ai = new SmartAI(false);
+                playerPiece = 'X';
             }
             else {
                 ai = new SmartAI(true);
+                playerPiece = 'O';
             }
         }
         else {
             if (playerIsX) {
                 ai = new DumbAI(false);
+                playerPiece = 'X';
             } else {
                 ai = new DumbAI(true);
+                playerPiece = 'O';
             }
         }
         status = GameStatus.IN_PROGRESS;
@@ -76,7 +81,7 @@ public class Game {
     {
         System.out.println(board.get(i,j));
         if (board.get(i,j) == ' ' && i < 3 && j < 3) {
-            Move move = new Move(i, j, 'X');
+            Move move = new Move(i, j, playerPiece);
 
 
             board = new Board(board, move);
