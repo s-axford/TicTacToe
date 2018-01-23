@@ -73,10 +73,6 @@ public class ConsoleRunner {
         Integer col;
         Board board = game.getBoard();
 
-
-        if (playerIsX)
-        {
-
             do {
                 System.out.println("What row?");
                 row = scanner.nextInt() - 1;
@@ -85,19 +81,7 @@ public class ConsoleRunner {
             }while (game.placePlayerPiece(row,col) == false);
             game.aiPlacePiece();
         }
-        /*
-        else
-        {
-            //game.aiPlacePiece();
-            System.out.println("What row?");
-            row = scanner.nextInt();
-            System.out.println("What col?");
-            col = scanner.nextInt();
-            game.placePlayerPiece(row , col);
-            System.out.println(board.toString());
-        }
-        */
-    }
+
 
     /*
      * Enter the main control loop which returns only at the end of the game
