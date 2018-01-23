@@ -7,7 +7,7 @@
 
 public class Game {
     private Board board = new Board();
-    private GameStatus status = GameStatus.IN_PROGRESS;
+    private GameStatus status;
     private AI ai;
 
     /*
@@ -35,6 +35,7 @@ public class Game {
                 ai = new DumbAI(true);
             }
         }
+        status = GameStatus.IN_PROGRESS;
     }
 
 
@@ -48,11 +49,19 @@ public class Game {
     /**
      * Get the game's status.
      */
-    public GameStatus getStatus()
-    {
-	    return status;
+    public GameStatus getStatus() {
+        if (board.isFull() == true) {
+            status = GameStatus.DRAW;
+        } else {
+            if ((board.get(0,0) == 'X' && board.get(0,1) == 'X' && board.get(0,2) == 'X') || (board.get(1,0) == 'X' && board.get(1,1) == 'X' && board.get(1,2) == 'X') || (board.get(0,2) == 'X' && board.get(1,2) == 'X' && board.get(2,2) == 'X') || (board.get(0,0) == 'X' && board.get(1,0) == 'X' && board.get(2,0) == 'X') || (board.get(0,1) == 'X' && board.get(1,1) == 'X' && board.get(2,1) == 'X') || (board.get(0,2) == 'X' && board.get(1,2) == 'X' && board.get(2,2) == 'X') || (board.get(0,0) == 'X' && board.get(1,1) == 'X' && board.get(2,2) == 'X') || ((board.get(0,2) == 'X' && board.get(1,1) == 'X' && board.get(2,0) == 'X'))) {
+                status = GameStatus.X_WON;
+            }
+            if ((board.get(0,0) == 'O' && board.get(0,1) == 'O' && board.get(0,2) == 'O') || (board.get(1,0) == 'O' && board.get(1,1) == 'O' && board.get(1,2) == 'O') || (board.get(0,2) == 'O' && board.get(1,2) == 'O' && board.get(2,2) == 'O') || (board.get(0,0) == 'O' && board.get(1,0) == 'O' && board.get(2,0) == 'O') || (board.get(0,1) == 'O' && board.get(1,1) == 'O' && board.get(2,1) == 'O') || (board.get(0,2) == 'O' && board.get(1,2) == 'O' && board.get(2,2) == 'O') || (board.get(0,0) == 'O' && board.get(1,1) == 'O' && board.get(2,2) == 'O') || ((board.get(0,2) == 'O' && board.get(1,1) == 'O' && board.get(2,0) == 'O'))) {
+                status = GameStatus.O_WON;
+            }
+        }
+        return status;
     }
-    
     /**
      * Place a piece for the player on the board.
      * @param i i-coordinate of desired position.
