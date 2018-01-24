@@ -23,50 +23,45 @@ public class DumbAI implements AI {
     public DumbAI(boolean aiIsX) {
         if (aiIsX)
         {
-            AIPiece = 'X';
+            AIPiece = 'X';      //Sets the AI as the X player
         }
         else
         {
-            AIPiece = 'O';
+            AIPiece = 'O';      //Sets the AI as the O player
         }
     }
 
-    public int absolute(int value)
+    public int absolute(int value)      //Finds the absolute value of an integer
     {
-        if (value < 0)
+        if (value < 0)  //If the value is a negative number
         {
-            value = value * -1;
+            value = value * -1; //Changes the number to positive
         }
-        return value;
+        return value;   //Returns either the same value or modified integer
     }
 
     public Move chooseMove(Board board) {
 
         //Finds random number
-        int col = random.nextInt();
-        col = this.absolute(col % 3);
-        System.out.println(col);
-        int row = random.nextInt();
-        row = this.absolute(row % 3);
-        System.out.println(row);
+        int col = random.nextInt();         //Finds a random integer
+        col = this.absolute(col % 3);  //Modifies the random integer to be 0, 1, or 2
+        int row = random.nextInt();         //Finds a random integer
+        row = this.absolute(row % 3);  //Modifies the random integer to be 0, 1, or 2
 
         do  {
-            col = random.nextInt();
-            col = this.absolute(col % 3);
-            row = random.nextInt();
-            row = this.absolute(row % 3);
-            System.out.println(row);
-        } while (board.get(row, col) != ' ');
-
-        //Print AI Selection
-        System.out.println("AI Selection Info: ");
-        System.out.println(row + 1);
-        System.out.println(col + 1);
-
-        Move move = new Move(row, col, AIPiece);
+            //Finds a random location on the board
+            col = random.nextInt();         //Finds a random integer
+            col = this.absolute(col % 3);   //Modifies the random integer to be 0, 1, or 2
+            row = random.nextInt();         //Finds a random integer
+            row = this.absolute(row % 3);   //Modifies the random integer to be 0, 1, or 2
+        } while (board.get(row, col) != ' ');   //Repeats if the board location is not empty
 
 
-        return move;
+
+        Move move = new Move(row, col, AIPiece);    //Creates a move based on the AI selection
+
+
+        return move;    //Returns the AI's move
     }
 
 }

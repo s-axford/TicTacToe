@@ -54,18 +54,18 @@ public class Game {
      * Get the game's status.
      */
     public GameStatus getStatus() {
-        if (board.isFull() == true) {
-            status = GameStatus.DRAW;       //Changes the status of the game
-        } else {
             //Conditions for X to win
-            if ((board.get(0,0) == 'X' && board.get(0,1) == 'X' && board.get(0,2) == 'X') || (board.get(1,0) == 'X' && board.get(1,1) == 'X' && board.get(1,2) == 'X') || (board.get(0,2) == 'X' && board.get(1,2) == 'X' && board.get(2,2) == 'X') || (board.get(0,0) == 'X' && board.get(1,0) == 'X' && board.get(2,0) == 'X') || (board.get(0,1) == 'X' && board.get(1,1) == 'X' && board.get(2,1) == 'X') || (board.get(0,2) == 'X' && board.get(1,2) == 'X' && board.get(2,2) == 'X') || (board.get(0,0) == 'X' && board.get(1,1) == 'X' && board.get(2,2) == 'X') || ((board.get(0,2) == 'X' && board.get(1,1) == 'X' && board.get(2,0) == 'X'))) {
+            if ((board.get(0,0) == 'X' && board.get(0,1) == 'X' && board.get(0,2) == 'X') || (board.get(1,0) == 'X' && board.get(1,1) == 'X' && board.get(1,2) == 'X') || (board.get(2,0) == 'X' && board.get(2,1) == 'X' && board.get(2,2) == 'X') || (board.get(0,0) == 'X' && board.get(1,0) == 'X' && board.get(2,0) == 'X') || (board.get(0,1) == 'X' && board.get(1,1) == 'X' && board.get(2,1) == 'X') || (board.get(0,2) == 'X' && board.get(1,2) == 'X' && board.get(2,2) == 'X') || (board.get(0,0) == 'X' && board.get(1,1) == 'X' && board.get(2,2) == 'X') || ((board.get(0,2) == 'X' && board.get(1,1) == 'X' && board.get(2,0) == 'X'))) {
                 status = GameStatus.X_WON;  //Changes the status of the game
             }
             // Conditions for O to win
-            if ((board.get(0,0) == 'O' && board.get(0,1) == 'O' && board.get(0,2) == 'O') || (board.get(1,0) == 'O' && board.get(1,1) == 'O' && board.get(1,2) == 'O') || (board.get(0,2) == 'O' && board.get(1,2) == 'O' && board.get(2,2) == 'O') || (board.get(0,0) == 'O' && board.get(1,0) == 'O' && board.get(2,0) == 'O') || (board.get(0,1) == 'O' && board.get(1,1) == 'O' && board.get(2,1) == 'O') || (board.get(0,2) == 'O' && board.get(1,2) == 'O' && board.get(2,2) == 'O') || (board.get(0,0) == 'O' && board.get(1,1) == 'O' && board.get(2,2) == 'O') || ((board.get(0,2) == 'O' && board.get(1,1) == 'O' && board.get(2,0) == 'O'))) {
+           else if ((board.get(0,0) == 'O' && board.get(0,1) == 'O' && board.get(0,2) == 'O') || (board.get(1,0) == 'O' && board.get(1,1) == 'O' && board.get(1,2) == 'O') || (board.get(0,2) == 'O' && board.get(1,2) == 'O' && board.get(2,2) == 'O') || (board.get(0,0) == 'O' && board.get(1,0) == 'O' && board.get(2,0) == 'O') || (board.get(0,1) == 'O' && board.get(1,1) == 'O' && board.get(2,1) == 'O') || (board.get(0,2) == 'O' && board.get(1,2) == 'O' && board.get(2,2) == 'O') || (board.get(0,0) == 'O' && board.get(1,1) == 'O' && board.get(2,2) == 'O') || ((board.get(0,2) == 'O' && board.get(1,1) == 'O' && board.get(2,0) == 'O'))) {
                 status = GameStatus.O_WON;  //Changes the status of the game
             }
-        }
+            //Conditions for a draw
+            else if (board.isFull() == true) {
+                status = GameStatus.DRAW;       //Changes the status of the game
+            }
         return status;
     }
     /**
@@ -90,7 +90,7 @@ public class Game {
 
         //Input not valid
         System.out.println ("\n\n\n\n\n\n\n\nInvalid Selection!");
-	    System.out.println(board.toString());
+	    //System.out.println(board.toString());
         return false;                           //Piece Placement Failed
     }
 
