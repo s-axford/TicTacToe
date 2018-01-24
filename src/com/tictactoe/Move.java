@@ -23,13 +23,13 @@ public class Move {
     
     public int getI() {
         return i;
-    }
+    } //returns row
     
     public int getJ() {
         return j;
-    }
+    } //returns column
     
     public char getPiece() {
         return piece;
-    }
+    } //returns piece to be placed on board
 }
