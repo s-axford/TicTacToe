@@ -7,9 +7,6 @@
 public class Board {
 
     private char[][] board = new char[3][3];
-    /*
-     * TBD: Create additional private members if useful.
-     */
 
     /*
      * Construct an empty board (contains all space char's).
@@ -32,7 +29,7 @@ public class Board {
      */
     public Board(Board other, Move move) {
 
-		other.board[move.getI()][move.getJ()] = move.getPiece();
+		other.board[move.getI()][move.getJ()] = move.getPiece(); //Sets given spot on board as designated piece
 		this.board = other.board; // sets other board with move applied as the current board
     }
 
@@ -41,21 +38,21 @@ public class Board {
      */
     public String toString() {
 		
-		String currentGame = "    1   2   3  \n";
+		String currentGame = "    1   2   3  \n"; //top axis label
 		
-		for (int i = 0; i < 3; i++)
-		{
-			currentGame = currentGame + (i+1) + " | ";
-			for (int j = 0; j < 3; j++)
+		for (int i = 0; i < 3; i++) //for all rows
+
+			currentGame = currentGame + (i+1) + " | "; //print values and bars creating rows
+			for (int j = 0; j < 3; j++) // for all columns
 			{
-				currentGame = currentGame + board[i][j] + " | ";
+				currentGame = currentGame + board[i][j] + " | "; //adds bars creating columns
 				if ( j == 2){
-					currentGame = currentGame + "\n";
+					currentGame = currentGame + "\n"; // end if line
 				}
 			}
 		}
 		
-		return currentGame;
+		return currentGame; //returns game as string
     }
 
     /**
@@ -63,24 +60,24 @@ public class Board {
      * be in the range [0, 2].
      */
     public char get(int i, int j) {
-        return board[i][j];
+        return board[i][j]; //returns location on board
     }
     
     /**
      * @return true if there remain no empty spots on the board.
      */
     public boolean isFull() {
-        
+        //for all rows and columns
 		for (int i = 0; i < 3; i++)
 		{
 			for (int j = 0; j < 3; j++)
 			{
-				if (board[i][j] == ' ')
+				if (board[i][j] == ' ') //if the spot on board is empty
 				{
-					return false;
+					return false; //return that the board is not full
 				}
 			}
 		}
-		return true;
+		return true; //return that the board is full
     }
 }
